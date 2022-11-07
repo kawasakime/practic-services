@@ -1,4 +1,4 @@
-import { ITeamPerson } from "../interfaces/components";
+import { ISocialItem, ITeamPerson } from "../interfaces/components";
 
 export type TCategories =
   | "haircuts"
@@ -9,15 +9,19 @@ export type TCategories =
 
 export interface IConfig {
   title: string;
+  logoType: "img" | "text";
   companyName: string;
   information: {
-    address: string,
-    phone: string,
-    coord: [number, number]
-  }
+    address: string;
+    phone: string;
+    coord: [number, number];
+    timeWork: string;
+    socials: ISocialItem[];
+  };
   colors: {
     primary: string;
     secondary: string;
+    teriary: string;
   };
   navigation: { title: string; path: string }[];
   categories: { title: string; key: TCategories }[];
@@ -43,17 +47,25 @@ export interface IConfig {
 export const config: IConfig = {
   // Название сайта (название вкладки в браузере)
   title: "Leader - парикмахерская для лучших",
+  // Тип логотипа: text - текстом, img - изображением
+  logoType: "text",
   // Название фирмы для лого и некоторых мест
   companyName: "Leader",
   information: {
-    address: 'г. Ростов-на-Дону, пл. Гагарина 1',
-    phone: '+7 900 000 00 00',
-    coord: [47.2372031, 39.7120899]
+    address: "г. Ростов-на-Дону, пл. Гагарина 1",
+    phone: "+7 900 000 00 00",
+    coord: [47.2372031, 39.7120899],
+    timeWork: "пн-вс: 09:30 – 19:00",
+    socials: [
+      { title: "Вконтакте", link: "https://vk.com" },
+      { title: "Телеграм", link: "https://web.telegram.org/k/" },
+    ],
   },
   // цвета
   colors: {
     primary: "#111518",
     secondary: "#ffffff",
+    teriary: "#000000",
   },
   navigation: [
     {
@@ -86,7 +98,7 @@ export const config: IConfig = {
   ],
   mainSection: {
     description:
-      "Барбершоп в центре твоего города. Именно то, что нужно настоящим лидерам",
+      "Барбершоп в самом центре Ростова-на-Дону. Именно то, что нужно настоящим лидерам",
     btnText: "Наши услуги",
   },
   aboutUs: {

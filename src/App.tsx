@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import Registration from "./pages/Registration";
 import Team from "./pages/Team";
 import Footer from "./components/Footer";
+import Contacts from "./pages/Contacts";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
       {location.pathname !== "/" && <Footer />}
       <GlobalStyles />

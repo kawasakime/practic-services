@@ -1,36 +1,50 @@
 import styled from "styled-components";
 
 export const Header = styled.nav<{ primary: 1 | 0 }>`
+  position: relative;
   padding: 30px 0 40px 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  z-index: 100;
 
-  ul {
+  aside {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 30px;
-    
-    li {
-      margin: 0 20px;
+    align-items: center;
 
-      &:first-child {
-        margin-left: 0;
-      }
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 60px;
 
-      &:last-child {
-        margin-right: 0;
-      }
+      li {
+        margin: 0 20px;
 
-      a {
-        color: ${({ theme, primary }) =>
-          primary ? theme.colors.primary : theme.colors.secondary};
+        &:first-child {
+          margin-left: 0;
+        }
 
-        &:hover {
-          text-decoration: underline;
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          color: ${({ theme, primary }) =>
+            primary ? theme.colors.primary : theme.colors.secondary};
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
+  }
+
+  .info {
+    color: ${({ theme }) => theme.colors.secondary};
+    line-height: 1.6em;
+    font-size: 15px;
+    text-align: right;
   }
 `;

@@ -10,9 +10,10 @@ export const Wrapper = styled.div`
 
 export const Logo = styled.h1<{ primary: 1 | 0 }>`
   font-weight: ${({ theme }) => theme.fontWeight.light};
-  font-size: 24px;
+  font-size: 30px;
   color: ${({ theme, primary = 1 }) =>
     primary ? theme.colors.primary : theme.colors.secondary};
+  text-transform: uppercase;
 `;
 
 export const Button = styled(Link)<{ primary?: 1 | 0 }>`
