@@ -6,45 +6,43 @@ export const Header = styled.nav<{ primary: 1 | 0 }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
+
+  @media ${({theme}) => theme.media.small} {
+    padding-top: 15px;
+  }
 
   aside {
+    position: relative;
     display: flex;
     align-items: center;
+    z-index: 102;
+    
+    @media ${({theme}) => theme.media.large} {
 
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-left: 60px;
+      margin: 20px 0;
 
-      li {
-        margin: 0 20px;
+      a {
+        margin-left: 30px;
+      }
 
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        a {
-          color: ${({ theme, primary }) =>
-            primary ? theme.colors.primary : theme.colors.secondary};
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+      ul {
+        display: none;
       }
     }
   }
 
   .info {
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.whiteText};
     line-height: 1.6em;
     font-size: 15px;
     text-align: right;
+
+    @media ${({theme}) => theme.media.medium} {
+      font-size: 13px;
+    }
+
+    @media ${({theme}) => theme.media.small} {
+      display: none;
+    }
   }
 `;

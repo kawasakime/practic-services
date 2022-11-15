@@ -8,20 +8,17 @@ import Header from "../Header";
 const MainSection = () => {
   return (
     <S.MainSection>
-      {/* <S.LeftSide>
-        <C.Logo className="logo" primary={0}>
-          {config.companyName}
-        </C.Logo>
-      </S.LeftSide> */}
-      <S.BackgroundImage/>
-      <Header primary={0}/>
-      <S.InfoContainer>
-        <h1>{config.companyName}</h1>
-        <p>{config.mainSection.description}</p>
-        <C.Button to="/services" primary={0}>
-          {config.mainSection.btnText}
-        </C.Button>
-      </S.InfoContainer>
+      <S.BackgroundImage bgUrl={`${config.url}/assets/img/main.jpg`}/>
+      <Header primary={0} />
+      <C.Wrapper>
+        <S.InfoContainer>
+          <h1>{config.companyName}</h1>
+          <p>{config.mainSection.description}</p>
+          <C.Button to="/services" primary={0}>
+            {config.mainSection.btnText}
+          </C.Button>
+        </S.InfoContainer>
+      </C.Wrapper>
     </S.MainSection>
   );
 };

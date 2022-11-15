@@ -22,15 +22,14 @@ const Contacts: React.FC = () => {
           <h3>Наши социальные сети</h3>
           <p>
             {information.socials.map((item, i) => (
-              <a href={item.link}>{item.title}</a>
+              <C.SocialLink key={i} href={item.link}>
+                {item.title}
+              </C.SocialLink>
             ))}
           </p>
         </div>
         <YMaps>
-          <Map
-            className="map"
-            defaultState={{ center: information.coord, zoom: 16 }}
-          >
+          <Map className="map" defaultState={{ center: information.coord, zoom: 16 }}>
             <Placemark
               key={""}
               geometry={information.coord}

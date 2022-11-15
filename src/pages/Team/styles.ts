@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const Team = styled.section`
   padding: 50px 0 150px 0;
+  color: ${({ theme }) => theme.colors.secondary} !important;
+
+  @media ${({theme}) => theme.media.small} {
+    padding-top: 0;
+  }
 `;
 
 export const TeamContainer = styled.div`
@@ -13,83 +18,32 @@ export const TeamContainer = styled.div`
 export const Slider = styled.div`
   position: relative;
   width: calc((200px + 20px) * 3);
-  height: 300px;
   overflow: hidden;
 
-  .slidesBtns {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    svg {
-      box-sizing: content-box;
-      padding: 10px;
-      height: 10px;
-      width: auto;
-      fill: ${({ theme }) => theme.colors.primary};
-      transition: ${({ theme }) => theme.duration};
-      margin-left: 20px;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.2);
-      }
-
-      &.disable {
-        pointer-events: none;
-        fill: ${({ theme }) => theme.colors.primary}70;
-      }
-    }
+  @media ${({ theme }) => theme.media.large} {
+    height: 300px;
   }
 `;
 
 export const SliderContainer = styled.div<{ left: number }>`
-  position: absolute;
-  display: flex;
-  left: ${({ left }) => left}px;
-  transition: left ${({ theme }) => theme.duration};
-`;
-
-export const SliderItem = styled.div<{ bg: string }>`
   position: relative;
-  width: 200px;
-  height: 250px;
-  background: url(${({ bg }) => bg});
-  background-size: cover;
-  background-position: center center;
-  margin-right: 30px;
-  cursor: pointer;
-  transition: ${({ theme }) => theme.duration};
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 30px;
 
-  &.active {
-    pointer-events: none;
-    border: 4px solid ${({ theme }) => theme.colors.primary};
-  }
-
-  &:hover {
-    border: 4px solid ${({ theme }) => theme.colors.primary}50;
-  }
-
-  p {
+  @media ${({ theme }) => theme.media.large} {
     position: absolute;
-    padding-left: 15px;
-    height: 40px;
     display: flex;
-    align-items: center;
-    background: ${({ theme }) => theme.colors.primary}80;
-    font-weight: ${({ theme }) => theme.fontWeight.semiBold};
-    color: ${({ theme }) => theme.colors.secondary};
-    bottom: 0;
+    left: ${({ left }) => left}px;
+    transition: left ${({ theme }) => theme.duration};
   }
 `;
 
 export const ActiveSlidePerson = styled.div`
-  margin-left: 40px;
-  max-width: 400px;
-  margin-top: -80px;
-  
+
+  color: ${({ theme }) => theme.colors.secondary};
+
   h2 {
     text-align: center;
     margin: 15px 0;
@@ -97,12 +51,12 @@ export const ActiveSlidePerson = styled.div`
 
   p {
     text-align: justify;
+    line-height: 1.5em;
   }
-
 `;
 
 export const BigImage = styled.div<{ bg: string }>`
-  width: 400px;
+  width: 100%;
   height: 500px;
   background: url(${({ bg }) => bg});
   background-size: cover;

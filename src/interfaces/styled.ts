@@ -1,9 +1,7 @@
+import { config } from "../configs/config";
+
 export interface ITheme {
-  colors: {
-    primary: string;
-    secondary: string;
-    teriary: string
-  };
+  colors: typeof config.colors;
   duration: string;
   fontWeight: {
     thin: number;
@@ -14,4 +12,10 @@ export interface ITheme {
     semiBold: number;
     bold: number;
   };
+  media: {
+    large: string,
+    lessLarge: string,
+    medium: string,
+    small: string,
+  }
 }

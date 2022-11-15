@@ -13,11 +13,11 @@ const AboutUs: React.FC = () => {
         <S.Information>
           <h1>{aboutUs.title}</h1>
           <p>{aboutUs.description}</p>
-          <C.Button primary={1} to="/services">
+          <C.Button primary={0} to="/services">
             Наши услуги
           </C.Button>
         </S.Information>
-        <img src={`${window.location.origin}/assets/img/about-us.jpg`} alt="" />
+        <img src={`${config.url}/assets/img/about-us.jpg`} alt="" />
       </S.AboutUs>
     </C.Wrapper>
   );

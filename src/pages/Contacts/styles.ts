@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 export const Contacts = styled.div`
-  height: 400px;
   display: grid;
   place-items: center;
   grid-template-columns: 35% 65%;
-  /* padding: 50px 0 150px 0; */
+  padding: 50px 0 150px 0;
+
+  @media ${({ theme }) => theme.media.lessLarge} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media ${({theme}) => theme.media.small} {
+    padding-top: 0;
+  }
 
   .info {
     width: 100%;
@@ -24,19 +32,16 @@ export const Contacts = styled.div`
       &:last-child {
         margin-bottom: 0;
       }
-      a {
-        color: ${({theme}) => theme.colors.primary}90;
-        margin: 0 15px;
-        &:hover {
-        color: ${({theme}) => theme.colors.primary};
-          text-decoration: underline;
-        }
-      }
     }
   }
 
   .map {
     width: 100%;
     height: 100%;
+
+    @media ${({ theme }) => theme.media.lessLarge} {
+      margin-top: 30px;
+      height: 350px;
+    }
   }
-`
+`;
