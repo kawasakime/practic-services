@@ -29,9 +29,7 @@ function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProp
   } = props;
 
   const sliderRef = React.useRef<HTMLDivElement>(null);
-
-  console.log(!!filter ? items.filter(filter).length : undefined);
-
+  
   const width = useCurrentWidth();
 
   React.useEffect(() => {

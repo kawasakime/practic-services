@@ -203,10 +203,6 @@ export const SliderItem = styled.div<{ bg: string }>`
   transition: ${({ theme }) => theme.duration};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.whiteText} !important;
-  /* 
-  @media ${({ theme }) => theme.media.large} {
-    margin-right: 30px;
-  } */
 
   &.active {
     pointer-events: none;
@@ -242,3 +238,10 @@ export const SliderItem = styled.div<{ bg: string }>`
     }
   }
 `;
+
+export const Error = styled.div`
+  text-align: center;
+  h2 {
+    margin-top: -100px;
+  }
+`

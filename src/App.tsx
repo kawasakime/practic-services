@@ -12,6 +12,7 @@ import Team from "./pages/Team";
 import Footer from "./components/Footer";
 import Contacts from "./pages/Contacts";
 import Services from "./pages/Services";
+import Error from "./pages/Error";
 
 function App() {
   const location = useLocation();
@@ -26,7 +27,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/services" element={<Services />} />
-        <Route path="*" element={<div>404</div>}/>
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
       <GlobalStyles />

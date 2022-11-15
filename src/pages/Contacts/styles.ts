@@ -22,6 +22,7 @@ export const Contacts = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     h3 {
       margin-bottom: 15px;
