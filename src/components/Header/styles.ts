@@ -38,6 +38,10 @@ export const Header = styled.nav<{ primary: 1 | 0 }>`
     text-align: right;
     max-width: 230px;
 
+    @media ${({theme}) => theme.media.large} {
+      max-width: none;
+    } 
+
     @media ${({theme}) => theme.media.medium} {
       font-size: 13px;
     }
