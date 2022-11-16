@@ -36,6 +36,11 @@ export const Header = styled.nav<{ primary: 1 | 0 }>`
     line-height: 1.6em;
     font-size: 15px;
     text-align: right;
+    max-width: 230px;
+
+    @media ${({theme}) => theme.media.large} {
+      max-width: none;
+    }
 
     @media ${({theme}) => theme.media.medium} {
       font-size: 13px;

@@ -18,7 +18,7 @@ export const Slider = styled.div`
   overflow: hidden;
 
   @media ${({ theme }) => theme.media.large} {
-    height: 300px;
+    height: 400px;
   }
 
   @media ${({ theme }) => theme.media.medium} {
@@ -79,54 +79,6 @@ export const SliderBtns = styled.div`
     &.disable {
       pointer-events: none;
       fill: ${({ theme }) => theme.colors.secondary}70;
-    }
-  }
-`;
-
-export const SliderItem = styled.div<{ bg: string }>`
-  position: relative;
-  width: 200px;
-  height: 250px;
-  background: url(${({ bg }) => bg});
-  background-size: cover;
-  background-position: center center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: border ${({ theme }) => theme.duration};
-  border-radius: 5px;
-  color: ${({ theme }) => theme.colors.whiteText} !important;
-
-  &.active {
-    pointer-events: none;
-    border: 4px solid ${({ theme }) => theme.colors.secondary};
-  }
-
-  &:hover {
-    border-bottom: none;
-    opacity: 0.7;
-  }
-
-  p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    background: ${({ theme }) => theme.colors.secondary};
-    font-weight: ${({ theme }) => theme.fontWeight.semiBold};
-    color: ${({ theme }) => theme.colors.blackText};
-    bottom: 0;
-    padding: 7px 0;
-
-    span {
-      display: block;
-      font-weight: ${({ theme }) => theme.fontWeight.regular};
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.blackText};
     }
   }
 `;

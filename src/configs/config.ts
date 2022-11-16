@@ -31,6 +31,11 @@ export interface IConfig {
     description: string;
     btnText: string;
   };
+  services: {
+    title: string;
+    itemTimeTitle: string;
+    itemPriceTitle: string;
+  };
   registration: {
     title: string;
     description: string;
@@ -111,6 +116,11 @@ export const config: IConfig = {
     description:
       "Барбешоп Leader - мужской клуб нового формата. Мы объединили классическую цирюльню и концептуальное пространство для общения и досуга умных, успешных и уверенных в себе людей. Наша цель — стать для Вас «своим местом», приходя в которое, Вы попадаете в уютное сообщество друзей и товарищей близких по духу, где Вам всегда рады.",
     btnText: "Записаться",
+  },
+  services: {
+    title: "Наши услуги",
+    itemTimeTitle: "Длительность работы:",
+    itemPriceTitle: "Стоимость услуги:",
   },
   registration: {
     title: "Запишитесь к нам прямо сейчас",

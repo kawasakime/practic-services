@@ -27,6 +27,7 @@ const Team: React.FC = () => {
               ref={slideRef}
               key={i}
               bg={`${config.url}/assets/img/team/${item.img}`}>
+              <div className="bg-img"></div>
               <p>{item.name}</p>
             </C.SliderItem>
           )}

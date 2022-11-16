@@ -79,6 +79,10 @@ export const Title = styled.h1<{ primary?: 0 | 1 }>`
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   color: ${({ primary = 0, theme }) => (primary ? theme.colors.blackText : theme.colors.whiteText)};
 
+  @media ${({theme}) => theme.media.large} {
+    text-align: center;
+  }
+
   @media ${({ theme }) => theme.media.medium} {
     font-size: 30px;
   }
@@ -135,101 +139,44 @@ export const Navigation = styled.ul<{
   }
 `;
 
-export const Slider = styled.div`
-  position: relative;
-  width: calc((200px + 20px) * 3);
-  overflow: hidden;
-
-  @media ${({ theme }) => theme.media.large} {
-    height: 300px;
-  }
-`;
-
-export const SliderContainer = styled.div<{ left: number }>`
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  gap: 30px;
-
-  @media ${({ theme }) => theme.media.large} {
-    position: absolute;
-    display: flex;
-    left: ${({ left }) => left}px;
-    transition: left ${({ theme }) => theme.duration};
-  }
-`;
-
-export const SliderBtns = styled.div`
-  display: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  @media ${({ theme }) => theme.media.large} {
-    display: block;
-  }
-
-  svg {
-    box-sizing: content-box;
-    padding: 10px;
-    height: 10px;
-    width: auto;
-    fill: ${({ theme }) => theme.colors.secondary};
-    transition: ${({ theme }) => theme.duration};
-    margin-left: 20px;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    &.disable {
-      pointer-events: none;
-      fill: ${({ theme }) => theme.colors.secondary}70;
-    }
-  }
-`;
-
 export const SliderItem = styled.div<{ bg: string }>`
   position: relative;
-  width: 200px;
-  height: 250px;
-  background: url(${({ bg }) => bg});
-  background-size: cover;
-  background-position: center center;
   overflow: hidden;
   cursor: pointer;
   transition: ${({ theme }) => theme.duration};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.whiteText} !important;
-
+  height: fit-content;
+  max-width: 200px;
   &.active {
     pointer-events: none;
     border: 4px solid ${({ theme }) => theme.colors.secondary};
   }
-
   &:hover {
     border-bottom: none;
     opacity: 0.7;
   }
-
+  .bg-img {
+    width: 200px;
+    height: 250px;
+    background: url(${({ bg }) => bg});
+    background-size: cover;
+    background-position: center center;
+  }
   p {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
+    position: relative;
     width: 100%;
+
     background: ${({ theme }) => theme.colors.secondary};
     font-weight: ${({ theme }) => theme.fontWeight.semiBold};
     color: ${({ theme }) => theme.colors.blackText};
     bottom: 0;
-    padding: 7px 0;
-
+    padding: 7px 5px;
     span {
       display: block;
       font-weight: ${({ theme }) => theme.fontWeight.regular};
@@ -244,4 +191,4 @@ export const Error = styled.div`
   h2 {
     margin-top: -100px;
   }
-`
+`;
