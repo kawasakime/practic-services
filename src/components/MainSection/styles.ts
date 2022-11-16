@@ -24,7 +24,7 @@ export const BackgroundImage = styled.div<{ bgUrl: string }>`
 export const InfoContainer = styled.div`
   position: relative !important;
   margin-left: 60px;
-  max-width: 380px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,6 @@ export const InfoContainer = styled.div`
   h1 {
     font-size: 80px;
     font-weight: ${({ theme }) => theme.fontWeight.light};
-    color: ${({ theme }) => theme.colors.secondary};
     text-transform: uppercase;
 
     @media ${({ theme }) => theme.media.medium} {
@@ -54,7 +53,6 @@ export const InfoContainer = styled.div`
 
   p {
     margin: 15px 0 90px 0;
-    color: ${({ theme }) => theme.colors.secondary};
     font-weight: ${({ theme }) => theme.fontWeight.light};
     line-height: 1.4em;
   }

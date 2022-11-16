@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 document.title = config.title;
 
 root.render(
-  <BrowserRouter basename="/services-barbershop">
-  {/* <BrowserRouter> */}
+  // <BrowserRouter basename="/services-barbershop">
+  <BrowserRouter>
     <App />
   </BrowserRouter>
 );

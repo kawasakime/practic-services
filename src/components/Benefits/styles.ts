@@ -54,17 +54,23 @@ export const BenefitItemIcon = styled.div`
   justify-content: center;
   min-height: 100px;
   min-width: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  padding: 10px;
+
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.primary};
   margin-right: 20px;
 
+  img {
+    width: 60%;
+  }
+
   @media ${({ theme }) => theme.media.lessLarge} {
     min-height: 70px;
     min-width: 70px;
-
-    img {
-      width: 60%;
-    }
+    max-width: 70px;
+    max-height: 70px;
   }
 `;
 

@@ -14,7 +14,7 @@ const AboutUs: React.FC = () => {
           <h1>{aboutUs.title}</h1>
           <p>{aboutUs.description}</p>
           <C.Button primary={0} to="/services">
-            Наши услуги
+            {aboutUs.btnText}
           </C.Button>
         </S.Information>
         <img src={`${config.url}/assets/img/about-us.jpg`} alt="" />

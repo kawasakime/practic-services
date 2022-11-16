@@ -15,7 +15,7 @@ const Services: React.FunctionComponent = () => {
   return (
     <C.Wrapper>
       <S.Services>
-        <C.Title>Наши услуги</C.Title>
+        <C.Title>{config.services.title}</C.Title>
 
         <Slider
           items={services}
@@ -36,6 +36,7 @@ const Services: React.FunctionComponent = () => {
               className={item.id === activeItem.id ? "active" : undefined}
               onClick={() => setActiveItem(item)}
               bg={`${config.url}/assets/img/services/${item.img}`}>
+              <div className="bg-img"></div>
               <p>
                 {item.title}
                 <br />
@@ -48,10 +49,10 @@ const Services: React.FunctionComponent = () => {
               <p className="title">{activeItem.title}</p>
               <p className="descr">{activeItem.description}</p>
               <p className="duration">
-                Длительность работы: <span>{activeItem.duration}</span>
+                {config.services.itemTimeTitle} <span>{activeItem.duration}</span>
               </p>
               <p className="price">
-                Стоимость услуги: <span>{activeItem.price} ₽</span>
+                {config.services.itemPriceTitle} <span>{activeItem.price} ₽</span>
               </p>
               <S.ActiveServiceBg bgUrl={`${config.url}/assets/img/services/${activeItem.img}`} />
             </S.ActiveService>
