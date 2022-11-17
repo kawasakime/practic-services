@@ -56,8 +56,8 @@ export interface IConfig {
 
 export const config: IConfig = {
   // Название сайта (название вкладки в браузере)
-  url: "https://wyylame.github.io/services-sweetshop",
-  // url: "./",
+  // url: "https://wyylame.github.io/services-sweetshop",
+  url: "./",
   title: "Кондитерская Sweet Bear",
   // Название фирмы для лого и некоторых мест
   companyName: "SWEET BEAR",
