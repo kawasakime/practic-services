@@ -55,8 +55,8 @@ export interface IConfig {
 
 export const config: IConfig = {
   // Название сайта (название вкладки в браузере)
-  // url: "https://wyylame.github.io/services-sweetshop",
-  url: "./",
+  url: "https://wyylame.github.io/services-carservice",
+  // url: "./",
   title: "Автосервис WAY WAY",
   // Название фирмы для лого и некоторых мест
   companyName: "WAY WAY",
@@ -73,10 +73,10 @@ export const config: IConfig = {
   // цвета
   colors: {
     primary: "#0F1F3E",
-    secondary: "#fff",
+    secondary: "#ffffff",
     teriary: "#051026", // второй цвет для градиента
-    blackText: "#000",
-    whiteText: "#fff",
+    blackText: "#000000",
+    whiteText: "#ffffff",
   },
   navigation: [
     {

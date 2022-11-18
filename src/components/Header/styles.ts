@@ -19,7 +19,7 @@ export const Header = styled.nav<{ primary: 1 | 0 }>`
     
     @media ${({theme}) => theme.media.large} {
 
-      margin: 20px 0;
+      margin: 20px 0;      
 
       a {
         margin-left: 30px;
@@ -28,6 +28,11 @@ export const Header = styled.nav<{ primary: 1 | 0 }>`
       ul {
         display: none;
       }
+    }
+
+    @media ${({theme}) => theme.media.small} {
+      width: 100%;
+      justify-content: space-between;
     }
   }
 

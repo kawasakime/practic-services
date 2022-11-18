@@ -13,9 +13,9 @@ const Services: React.FunctionComponent = () => {
   );
 
   return (
-    <C.Wrapper>
+    <C.Wrapper disablePadding={true}>
       <S.Services>
-        <C.Title>{config.services.title}</C.Title>
+        <C.Title className="title">{config.services.title}</C.Title>
 
         <Slider
           items={services}

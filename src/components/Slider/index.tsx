@@ -29,7 +29,7 @@ function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProp
   } = props;
 
   const sliderRef = React.useRef<HTMLDivElement>(null);
-  
+
   const width = useCurrentWidth();
 
   React.useEffect(() => {
@@ -73,22 +73,22 @@ function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProp
         <S.SliderContainer left={leftPosition}>
           {!!filter ? items.filter(filter).map(renderSliderItem) : items.map(renderSliderItem)}
         </S.SliderContainer>
-        <S.SliderBtns>
-          <PrevSlide
-            className={leftPosition === 0 ? "disable" : undefined}
-            onClick={handlePrevClick}
-          />
-          <NextSlide
-            onClick={handleNextClick}
-            className={
-              leftPosition ===
-              ((!!filter ? items.filter(filter).length : items.length) - visibleItemsCount()) * -230
-                ? "disable"
-                : undefined
-            }
-          />
-        </S.SliderBtns>
       </S.Slider>
+      <S.SliderBtns>
+        <PrevSlide
+          className={leftPosition === 0 ? "disable" : undefined}
+          onClick={handlePrevClick}
+        />
+        <NextSlide
+          onClick={handleNextClick}
+          className={
+            leftPosition ===
+            ((!!filter ? items.filter(filter).length : items.length) - visibleItemsCount()) * -230
+              ? "disable"
+              : undefined
+          }
+        />
+      </S.SliderBtns>
       <S.ActiveItem>{renderActiveItem}</S.ActiveItem>
     </S.SliderWrapper>
   );

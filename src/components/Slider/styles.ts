@@ -10,6 +10,11 @@ export const SliderWrapper = styled.div<{ mTop: string }>`
     flex-direction: column;
     align-items: center;
   }
+
+  @media ${({ theme }) => theme.media.medium} {
+    overflow: hidden;
+    margin-top: 50px;
+  }
 `;
 
 export const Slider = styled.div`
@@ -22,6 +27,7 @@ export const Slider = styled.div`
   }
 
   @media ${({ theme }) => theme.media.medium} {
+    overflow: visible;
     width: calc((200px * 2) + 30px);
   }
 
@@ -47,15 +53,11 @@ export const SliderContainer = styled.div<{ left: number }>`
 
 export const SliderBtns = styled.div`
   display: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: relative;
 
   @media ${({ theme }) => theme.media.large} {
     display: flex;
     align-items: center;
-    right: 50%;
-    transform: translate(50%);
 
     svg {
       margin-left: 0 !important;
@@ -90,14 +92,17 @@ export const CategoriesList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 40px;
 
   @media ${({ theme }) => theme.media.large} {
     position: relative;
+    top: 0px;
   }
 
   @media ${({ theme }) => theme.media.medium} {
     justify-content: center;
     gap: 10px;
+    padding: 0 10px;
     li {
       padding: 10px 15px;
       border: 1px solid ${({ theme }) => theme.colors.secondary};

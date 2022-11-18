@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{disablePadding?: boolean}>`
   max-width: 1200px;
   width: 100%;
   padding: 0 10px;
@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   @media ${({ theme }) => theme.media.large} {
     width: 100%;
     padding: 0 20px;
+  }
+
+  @media ${({theme}) => theme.media.medium} {
+    padding: ${({disablePadding}) => !!disablePadding ? "0 0" : "0 20px"};
   }
 `;
 
