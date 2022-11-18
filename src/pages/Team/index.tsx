@@ -14,9 +14,9 @@ const Team: React.FC = () => {
   const [activePerson, setActivePerson] = React.useState<ITeamPerson>(team.list[0]);
 
   return (
-    <C.Wrapper>
+    <C.Wrapper disablePadding={true}>
       <S.Team>
-        <C.Title>{team.title}</C.Title>
+        <C.Title className="title">{team.title}</C.Title>
 
         <Slider
           items={team.list}
@@ -38,6 +38,7 @@ const Team: React.FC = () => {
               <p>{activePerson.description}</p>
             </S.ActiveSlidePerson>
           }
+          minHeight={"330px"}
         />
         {/* <S.TeamContainer>
           <C.Slider>

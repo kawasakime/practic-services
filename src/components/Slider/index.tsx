@@ -13,6 +13,7 @@ interface ISliderProps<T, U> {
   categories?: U[];
   renderCategoryItem?: (item: U, i: number) => React.ReactNode;
   filter?: (item: T) => boolean;
+  minHeight?: string
 }
 
 function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProps<T, U>> {
@@ -26,6 +27,7 @@ function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProp
     renderCategoryItem,
     filter,
     activeCategory,
+    minHeight = '400px'
   } = props;
 
   const sliderRef = React.useRef<HTMLDivElement>(null);
@@ -69,7 +71,7 @@ function Slider<T, U>(props: ISliderProps<T, U>): React.ReactElement<ISliderProp
       {!!categories && !!renderCategoryItem && (
         <S.CategoriesList>{categories.map(renderCategoryItem)}</S.CategoriesList>
       )}
-      <S.Slider ref={sliderRef}>
+      <S.Slider ref={sliderRef} minHeight={minHeight}>
         <S.SliderContainer left={leftPosition}>
           {!!filter ? items.filter(filter).map(renderSliderItem) : items.map(renderSliderItem)}
         </S.SliderContainer>

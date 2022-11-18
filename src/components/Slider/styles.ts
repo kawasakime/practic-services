@@ -17,13 +17,13 @@ export const SliderWrapper = styled.div<{ mTop: string }>`
   }
 `;
 
-export const Slider = styled.div`
+export const Slider = styled.div<{ minHeight?: string }>`
   position: relative;
   width: calc((200px * 3) + 60px);
   overflow: hidden;
 
   @media ${({ theme }) => theme.media.large} {
-    height: 400px;
+    min-height: ${({ minHeight }) => minHeight};
   }
 
   @media ${({ theme }) => theme.media.medium} {
@@ -142,5 +142,6 @@ export const ActiveItem = styled.div`
 
   @media (max-width: 460px) {
     width: 100%;
+    padding: 0 20px;
   }
 `;

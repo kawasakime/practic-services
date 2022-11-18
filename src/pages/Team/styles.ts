@@ -4,7 +4,13 @@ export const Team = styled.section`
   padding: 50px 0 150px 0;
   color: ${({ theme }) => theme.colors.secondary} !important;
 
-  @media ${({theme}) => theme.media.small} {
+  @media ${({ theme }) => theme.media.medium} {
+    .title {
+      padding-left: 20px;
+    }
+  }
+
+  @media ${({ theme }) => theme.media.small} {
     padding-top: 0;
   }
 `;
@@ -41,7 +47,6 @@ export const SliderContainer = styled.div<{ left: number }>`
 `;
 
 export const ActiveSlidePerson = styled.div`
-
   color: ${({ theme }) => theme.colors.secondary};
 
   h2 {

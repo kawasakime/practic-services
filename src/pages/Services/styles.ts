@@ -7,8 +7,10 @@ export const Services = styled.div`
     padding-top: 0;
   }
 
-  @media ${({theme}) => theme.media.medium} {
-    padding-left: 20px;
+  @media ${({ theme }) => theme.media.medium} {
+    .title {
+      padding-left: 20px;
+    }
   }
 `;
 
@@ -21,7 +23,6 @@ export const ServicesContainer = styled.div`
 
 export const ActiveService = styled.div`
   position: relative;
-  /* width: 100%; */
   height: 100%;
   min-height: 500px;
   max-height: 500px;
@@ -31,10 +32,6 @@ export const ActiveService = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px;
-
-  @media ${({theme}) => theme.media.medium} {
-    margin-right: 20px !important;
-  }
 
   p {
     position: relative;
