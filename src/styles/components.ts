@@ -33,7 +33,7 @@ export const Logo = styled(Link)`
 
   img {
     position: relative !important;
-    max-height: 25px;
+    max-height: 50px;
   }
 `;
 

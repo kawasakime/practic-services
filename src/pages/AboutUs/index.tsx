@@ -17,7 +17,7 @@ const AboutUs: React.FC = () => {
             {aboutUs.btnText}
           </C.Button>
         </S.Information>
-        <img src={`${config.url}/assets/img/about-us.jpg`} alt="" />
+        <img src={`${config.url}/assets/img/about-us.png`} alt="" />
       </S.AboutUs>
     </C.Wrapper>
   );

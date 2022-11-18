@@ -40,7 +40,7 @@ const Services: React.FunctionComponent = () => {
               <p>
                 {item.title}
                 <br />
-                <span>{item.price}₽</span>
+                <span>{item.price} ₽</span>
               </p>
             </C.SliderItem>
           )}
@@ -48,9 +48,12 @@ const Services: React.FunctionComponent = () => {
             <S.ActiveService>
               <p className="title">{activeItem.title}</p>
               <p className="descr">{activeItem.description}</p>
-              <p className="duration">
-                {config.services.itemTimeTitle} <span>{activeItem.duration}</span>
-              </p>
+              {activeItem.duration !== "" && (
+                <p className="duration">
+                  {config.services.itemTimeTitle} <span>{activeItem.duration}</span>
+                </p>
+              )}
+
               <p className="price">
                 {config.services.itemPriceTitle} <span>{activeItem.price} ₽</span>
               </p>
@@ -58,51 +61,6 @@ const Services: React.FunctionComponent = () => {
             </S.ActiveService>
           }
         />
-
-        {/* <S.ServicesContainer>
-          <S.ServicesList>
-            {config.categories.map((item, i) => (
-              <li
-                className={activeCategory === item.key ? "active" : undefined}
-                key={i}
-                onClick={() => setActiveCategory(item.key)}>
-                {item.title}
-              </li>
-            ))}
-          </S.ServicesList>
-          <C.Slider>
-            <C.SliderContainer left={leftPosition}>
-              {services
-                .filter((item) => item.category === activeCategory)
-                .map((item, i) => (
-                  <C.SliderItem
-                    key={i}
-                    className={item.id === activeItem.id ? "active" : undefined}
-                    onClick={() => setActiveItem(item)}
-                    bg={`${window.location.origin}/assets/img/services/${item.img}`}>
-                    <p>
-                      {item.title}
-                      <br />
-                      <span>{item.price}₽</span>
-                    </p>
-                  </C.SliderItem>
-                ))}
-            </C.SliderContainer>
-          </C.Slider>
-          <S.ActiveService>
-            <p className="title">{activeItem.title}</p>
-            <p className="descr">{activeItem.description}</p>
-            <p className="duration">
-              Длительность работы: <span>{activeItem.duration}</span>
-            </p>
-            <p className="price">
-              Стоимость услуги: <span>{activeItem.price} ₽</span>
-            </p>
-            <S.ActiveServiceBg
-              bgUrl={`${window.location.origin}/assets/img/services/${activeItem.img}`}
-            />
-          </S.ActiveService>
-        </S.ServicesContainer> */}
       </S.Services>
     </C.Wrapper>
   );

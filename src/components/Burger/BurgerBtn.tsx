@@ -9,7 +9,7 @@ interface IBurgerBtnProps {
 
 const BurgerBtn: React.FunctionComponent<IBurgerBtnProps> = ({ isActive, handleClick }) => {
   return (
-    <S.BurgerBtn onClick={() => handleClick()} isActive={false}>
+    <S.BurgerBtn onClick={() => handleClick()} isActive={isActive}>
       <span></span>
     </S.BurgerBtn>
   );

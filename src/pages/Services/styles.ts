@@ -31,6 +31,7 @@ export const ActiveService = styled.div`
   p {
     position: relative;
     z-index: 2;
+    white-space: pre-line;
     span {
       font-weight: ${({ theme }) => theme.fontWeight.bold};
     }

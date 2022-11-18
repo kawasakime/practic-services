@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
   padding: 50px 0;
-  box-shadow: 0px 0px 10px 0px ${({ theme }) => theme.colors.secondary}10;
+  box-shadow: 0px 0px 1px 0px ${({ theme }) => theme.colors.secondary};
 
   .wrapper {
     display: flex;
